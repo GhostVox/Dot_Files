@@ -157,7 +157,7 @@
 },
 
     "temperature": {
-        "hwmon-path":"/sys/class/hwmon/hwmon3/temp1_input",
+        "hwmon-path":"/sys/class/hwmon/hwmon3/temp3_input",
         "thermal-zone": 0,
         "format": "",
         "format-alt-click": "click-right",

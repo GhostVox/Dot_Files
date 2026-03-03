@@ -1,0 +1,106 @@
+# ~/.config/lazygit/config.yml
+
+gui:
+  # Nerd Font icons
+  nerdFontsVersion: "3"
+  # Show file icons
+  showFileIcons: true
+  # Side panel width
+  sidePanelWidth: 0.25
+  # Expand focused panel
+  expandFocusedSidePanel: true
+  # Show bottom line (command info)
+  showBottomLine: true
+  # Show random tip on startup
+  showRandomTip: false
+  # Mouse support
+  mouseEvents: true
+  # Smooth scrolling
+  scrollHeight: 5
+  # Border style: single, double, rounded, hidden
+  border: "rounded"
+  # Theme - matches common neovim dark themes
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - white
+    selectedLineBgColor:
+      - reverse
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - yellow
+    defaultFgColor:
+      - default
+git:
+  # Auto-fetch on open
+  autoFetch: true
+  autoFetchInterval: 60
+  # Auto-refresh when files change on disk
+  autoRefresh: true
+  # Show full commit hashes
+  shortHashLength: 8
+  # Merge vs rebase for pulling
+  merging:
+    manualCommit: false
+    args: ''
+  # Better diffs
+  diffContextSize: 5
+  # Disable push to ensure intentional pushes
+  disableForcePushing: false
+  # Commit prefix (useful for conventional commits)
+  commitPrefix:
+    - pattern: ""
+      replace: ""
+  # Parse emoji in commits
+  parseEmoji: true
+  # Log order
+  log:
+    order: "topo-order"
+    allBranches: false
+    showGraph: "when-maximised"
+# Pager for diffs - uses delta if you have it installed
+# Remove this block if you don't have delta
+pager:
+  colorArg: always
+  pager: delta --dark --paging=never --line-numbers --side-by-side
+# Open files in neovim
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim +{{line}} {{filename}}"
+  open: "xdg-open {{filename}} &"
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<c-c>'
+    return: '<esc>'
+    nextItem: 'j'
+    prevItem: 'k'
+    nextPage: '<c-d>'
+    prevPage: '<c-u>'
+    scrollLeft: 'H'
+    scrollRight: 'L'
+    confirm: '<enter>'
+    remove: 'd'
+    new: 'n'
+    edit: 'e'
+    openFile: 'o'
+    refresh: 'R'
+    toggleWhitespaceInDiffView: '<c-w>'
+  files:
+    ignoreFile: 'i'
+    toggleStagedAll: 'A' # stage/unstage all
+    viewResetOptions: 'D'
+  commits:
+    squashDown: 's'
+    rewordCommit: 'r'
+    renameCommit: 'R'
+    viewResetOptions: 'D'
+    cherryPickCopy: 'c'
+    pasteCommits: 'v'
+    createFixupCommit: 'f'
