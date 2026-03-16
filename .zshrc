@@ -99,4 +99,9 @@ fi
 # This MUST be the last thing to run to take control of the prompt.
 export STARSHIP_CONFIG="$HOME/.config/Dot_Files/starship.toml"
 source <(starship init zsh)
+source ~/.config/zsh/fix-jetbrains-icon.sh
 export PATH="$PATH:$HOME/.dotnet/tools"
+
+
+
+
