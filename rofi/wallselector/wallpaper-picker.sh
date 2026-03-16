@@ -27,10 +27,18 @@ CHOICE=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "
 if [[ -n "$CHOICE" ]]; then 
     WALLPAPER_PATH="$WALLPAPER_DIR/$CHOICE"
     
-    # 1. Update the symbolic link for persistence/other apps
+    # 1. Update the symlink first
     ln -sf "$WALLPAPER_PATH" "$SYMLINK_TARGET"
     
-    # 2. Update Hyprpaper immediately for both monitors
-    hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER_PATH"
-    hyprctl hyprpaper wallpaper "DP-3,$WALLPAPER_PATH"
+    # 2. Preload the NEW image
+    hyprctl hyprpaper preload "$WALLPAPER_PATH"
+    
+    # 3. Apply the NEW image to all monitors
+    # (Using the empty monitor name ',' applies it to all if you prefer)
+    hyprctl hyprpaper wallpaper ",$WALLPAPER_PATH,"
+    
+    # 4. CRITICAL: Unload the PREVIOUS images
+    # This forces Hyprpaper to stop holding onto the old file buffer
+    # which usually stops the "reverting" behavior.
+    hyprctl hyprpaper unload all
 fi
