@@ -205,13 +205,12 @@ input {
     kb_options =
     kb_rules =
 
-    # changes the behavior of auto selecting window mouse is hovering over.
     follow_mouse = 1
 
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
     touchpad {
-        natural_scroll = true
+        natural_scroll = false
     }
 }
 
@@ -260,14 +259,6 @@ windowrule{
     stay_focused = true
 }
 
-#
-windowrule{
-    name = intellij-toolbox
-    match:class = (jetbrains-toolbox)
-    match:title = (Toolbox)
-    monitor = HDMI-A-1
-}
-
 
 
 
@@ -280,6 +271,3 @@ windowrule{
         center = true
         size = 60% 60%
     }
-
-# hypr-share-picker
-env = HYPRLAND_SHARE_PICKER,~/.local/bin/hypr-share-picker

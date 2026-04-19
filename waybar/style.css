@@ -62,20 +62,21 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "monospace";
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     min-height: 0;
     color: @foreground;
 }
 .modules-right > *, .modules-left > *, .modules-center > * {
     margin: 0px 10px;
     font-size: 16px;
+
 }
 
 window#waybar {
-    background: rgba(30, 30, 30, 0.4);
-	  color: @foreground;
+    background: rgba(30, 30, 30, 0.0);
+    color: @foreground;
+
 }
 
 #workspaces {

@@ -1,6 +1,8 @@
 " IntelliJ IdeaVim keybindings (add to ~/.ideavimrc)
 " Leader key is Space
 let mapleader = " "
+nnoremap <Space> <Nop>
+vnoremap <Space> <Nop>
 set clipboard=unnamedplus,unnamed,ideaput
 
 " Enable IdeaVim plugins
@@ -12,124 +14,177 @@ set ReplaceWithRegister
 set which-key
 set highlightedyank
 
-set timeoutlen=10000
-
+set timeoutlen=3000
+" Tell Which-Key to ignore 'j' in Insert mode
+let g:WhichKey_IgnoreInInsert = ['j']
 " Configure highlighted yank
 let g:highlightedyank_highlight_duration = "700"
 let g:highlightedyank_highlight_color = "rgba(213, 108, 40, 100)"
 
 "======== Open File Explore =====
+let g:WhichKeyDesc_ActivateProjectToolWindow = "- Open File Explorer"
 nmap - :action ActivateProjectToolWindow<CR>
-
-
+let g:WhichKeyDesc_toggle = "<leader>t toggle"
+let g:WhichKeyDesc_toggle_typehints = "<leader>th Toggle Inlay Hints"
+nmap <leader>th :action ToggleInlayHintsGloballyAction<CR>
 " ===== LSP MAPPINGS =====
 " Code actions
 nmap <Space>ca :action ShowIntentionActions<CR>
 nmap <Space>ca :action ShowIntentionActions<CR>
 
-" Rename
+" Rename"
+let g:WhichKeyDesc_rename = "<leader>rn Rename Element"
 nmap <Space>rn :action RenameElement<CR>
 
-" Workspace symbols
-nmap <Space>ws :action GotoSymbol<CR>
+
 
 " Document symbols
+let g:WhichKeyDesc_document = "<leader>ds Document Symbols"
 nmap <Space>ds :action FileStructurePopup<CR>
 
 " Hover documentation
+let g:WhichKeyDesc_quickdoc = "<leader>shiftk Quick Documentation"
 nmap <Space><C-k> :action QuickDocumentation <CR>
 
 " Type definition
-nmap <Space>D :action GotoTypeDeclaration<CR>
+let g:WhichKeyDesc_goto_prefix ="g Goto"
 
+let g:WhichKeyDesc_goto_type_declaration = "gt  Type Declaration"
+nmap gt :action GotoTypeDeclaration<CR>
+
+let g:WhichKeyDesc_goto_declaration = "gD  Declaration"
 " Go to declaration
-nmap gD :action GotoDeclaration<CR>
+nmap gd :action GotoDeclaration<CR>
 
+let g:WhichKeyDesc_goto_implementation = "gi  Implementation"
 " Go to implementation
 nmap gi :action GotoImplementation<CR>
 
+let g:WhichKeyDesc_goto_usages = "gR  references"
 " Go to references
 nmap gr :action ShowUsages<CR>
 
+let g:WhichKeyDesc_goto_definition = "gd  Definition"
 " Go to definition
-nmap gd :action GotoDefinition<CR>
+nmap gD :action GotoDefinition<CR>
+
+let g:WhichKeyDesc_goto_symbol = "gs  Symbols"
+" Workspace symbols
+nmap gs :action GotoSymbol<CR>
 
 " Alternative LSP mappings (gr* series)
-nmap gra :action ShowIntentionActions<CR>
-vmap gra :action ShowIntentionActions<CR>
-nmap grn :action RenameElement<CR>
-nmap grr :action ShowUsages<CR>
-nmap gri :action GotoImplementation<CR>
-nmap grt :action GotoTypeDeclaration<CR>
-
+"nmap gra :action ShowIntentionActions<CR>
+"vmap gra :action ShowIntentionActions<CR>"
+"nmap grn :action RenameElement<CR>"
+"nmap grr :action ShowUsages<CR>"
+"nmap gri :action GotoImplementation<CR>"
+"nmap grt :action GotoTypeDeclaration<CR>"
+let g:WhichKeyDesc_goto_file_structure = "go File Structure"
 " Document symbol overview
-nmap gO :action FileStructurePopup<CR>
+nmap go :action FileStructurePopup<CR>
 
-" ===== SEARCH MAPPINGS =====
+"==== window splits ====
+let g:WhichKeyDesc_window_prefix = "<leader>w Window"
+let g:WhichKeyDesc_window_split_vertical = "<leader>wv Split Vertical"
+nmap<Space>wv :vs<CR>
+let g:WhichKeyDesc_window_split_horizontal = "<leader>wh Split Horizontal"
+nmap<Space>wh :sp<CR>
+
+" ==== SEARCH MAPPINGS =====
+let g:WhichKeyDesc_search_prefix = "<leader>s Search"
+
 " Search files
+let g:WhichKeyDesc_search_files = "<leader>sf Search Files"
 nmap <Space>sf :action GotoFile<CR>
 
 " Search keymaps
+let g:WhichKeyDesc_search_actions = "<leader>sk Search intellij actions"
 nmap <Space>sk :action GotoAction<CR>
 
+
 " Search help
+let g:WhichKeyDesc_search_help = "<leader>sh Search help topics"
 nmap <Space>sh :action HelpTopics<CR>
 
 " Search select telescope (search everywhere)
+let g:WhichKeyDesc_search_everywhere = "<leader>ss Search everywhere"
 nmap <Space>ss :action SearchEverywhere<CR>
 
-" Search current word
-nmap <Space>sw :action FindInPath<CR>
+
 
 " Search by grep (find in files)
+let g:WhichKeyDesc_search_grep = "<leader>sg Search Grep"
 nmap <Space>sg :action FindInPath<CR>
 
 " Search diagnostics
+let g:WhichKeyDesc_search_diagnostics = "<leader>sd Search Diagnostics"
 nmap <Space>sd :action ActivateProblemsViewToolWindow<CR>
 
 " Search resume (recent files)
+let g:WhichKeyDesc_search_recent = "<leader>sr Search Recent Files"
 nmap <Space>sr :action RecentFiles<CR>
 
-" Search recent files
-nmap <Space>s. :action RecentFiles<CR>
 
 " Find existing buffers
+let g:WhichKeyDesc_recent = "<leader><leader> Recent Files"
 nmap <Space><Space> :action RecentFiles<CR>
 
 " Fuzzily search in current buffer
+let g:WhichKeyDesc_search_buffer = "<leader>/ Search in buffer"
 nmap <Space>/ :action Find<CR>
 
-" Search in open files
-nmap <Space>s/ :action FindInPath<CR>
-
-" Search Neovim files (project files)
-nmap <Space>sn :action GotoFile<CR>
 
 " ===== FILE/PROJECT NAVIGATION =====
+let g:WhichKeyDesc_project_prefix = "<leader>p Project"
 " File explorer (project view)
+
+let g:WhichKeyDesc_file_explorer = "<leader>pv Project View"
 nmap <Space>pv :action ActivateProjectToolWindow<CR>
 
-" NeoTree reveal equivalent
-nmap <Space>\ :action SelectInProjectView<CR>
 
 " ===== FORMATTING =====
+let g:WhichKeyDesc_file_prefix ="<leader>f Format file"
 " Format buffer
 nmap <Space>f :action ReformatCode<CR>
 vmap <Space>f :action ReformatCode<CR>
 
 " ===== DIAGNOSTICS =====
+let g:WhichKeyDesc_quick_fix = "<leader>q QuickFix"
 " Open diagnostic quickfix list
 nmap <Space>q :action ActivateProblemsViewToolWindow<CR>
 
+
 " Diagnostic navigation
+let g:WhichKeyDesc_next_prefix = "] Next"
+let g:WhichKeyDesc_prev_prefix = "[ Previous"
+
+let g:WhichDesc_next_error = "]d Next Error"
 nmap ]d :action GotoNextError<CR>
+let g:WhichDesc_prev_error = "[d Previous Error"
 nmap [d :action GotoPreviousError<CR>
-nmap ]D :action GotoNextError<CR>
-nmap [D :action GotoPreviousError<CR>
 
 " ===== GIT MAPPINGS =====
+
+let g:WhichKeyDesc_git_prefix ="<leader>g Git "
+
 " Git add and commit
+let g:WhichKeyDesc_git_actions = "<leader>gs Git Status"
 nmap <Space>gs :action Vcs.QuickListPopupAction<CR>
+
+let g:WhichKeyDesc_git_update = "<leader>gp Git Pull "
+nmap <leader>gp :action Vcs.UpdateProject<CR>
+
+"Git stage hunk"
+let g:WhichKeyDesc_git_stage = "<leader>ghs Git Stage "
+nmap <leader>ga :action ChangesView.AddUnversioned<CR>
+let g:WhichKeyDesc_git_unstage = "<leader>ghu Git Unstage "
+nmap <leader>gu :action Git.Stage.Reset<CR>
+
+nmap <leader>ghr :action Vcs.RollbackChangedLines<CR>
+
+"Git Diff"
+let g:WhichKeyDesc_git_diff = "<leader>gd Git Diff"
+nmap <leader>gd :action Vcs.ShowDiffChangedLines<CR>
 
 " ===== DEBUGGING =====
 " Toggle breakpoint
@@ -194,8 +249,12 @@ nmap [Q :action GotoPreviousError<CR>
 " Clear search highlighting
 nmap <Esc> :nohlsearch<CR><Esc>
 
-" Open terminal
+" Open terminal from normal mode
 nmap <Space>t :action ActivateTerminalToolWindow<CR>
+
+" Close/hide terminal when focused inside it (press <Space>t or <leader>q)
+tnoremap <Space>t <C-\><C-n>:action HideActiveWindow<CR>
+
 
 " Toggle zen mode / distraction free mode
 nmap <Space>z :action ToggleDistractionFreeMode<CR>
@@ -207,6 +266,7 @@ nmap <Space>rl :action RecentLocations<CR>
 " Exit insert mode and save (your custom jj mapping)
 imap jj <Esc>:w<CR>
 
+        assertEquals(10.0, tokens.get(3).literal);
 " LSP signature help
 imap <C-S> <C-O>:action ParameterInfo<CR>
 
@@ -240,6 +300,10 @@ imap <C-F> <C-O>:action ReformatCode<CR>
 " Smart completion (IntelliJ's advanced completion)
 imap <C-Y> <C-O>:action SmartTypeCompletion<CR>
 
+imap <C-c> <Esc><Action>(SaveAll)
+
+
+
 " Escape from any popup
 imap <C-E> <C-O>:action EditorEscape<CR>
 
@@ -256,7 +320,20 @@ nmap <Space>r :action ChooseRunConfiguration<CR>
 nmap <Space>e :action ActivateProjectToolWindow<CR>
 
 " Show bookmarks
-nmap <Space>m :action ShowBookmarks<CR>
+"nmap <Space>m :action ShowBookmarks<CR>"
+
+" Show bookmarks
+let g:WhichKeyDesc_bookmarks_prefix = "<leader>m Bookmarks"
+
+let g:WhichKeyDesc_bookmarks_toggle = "<leader>mm Toggle Bookmark"
+nmap <leader>mm :action ToggleBookmark<CR>
+let g:WhichKeyDesc_bookmarks_toggle = "<leader>ms Show Bookmarks"
+nmap <leader>ms :action ActivateBookmarksToolWindow<CR>
+
+let g:WhichKeyDesc_bookmarks_next = "<leader>mn Next Bookmark"
+nmap <leader>mn :action GotoNextBookmark<CR>
+let g:WhichKeyDesc_bookmarks_previous = "<leader>mp Previous Bookmark"
+nmap <leader>mp :action GotoPreviousBookmark<CR>
 
 " Add line above/below
 nmap [<Space> O<Esc>j
@@ -315,5 +392,6 @@ vmap gx :action ShowInFinder<CR>
 smap <Tab> <C-O>:action NextTemplateVariable<CR>
 smap <S-Tab> <C-O>:action PreviousTemplateVariable<CR>
 
-" LSP signature help in select mode  
+" LSP signature help in select mode
+
 s

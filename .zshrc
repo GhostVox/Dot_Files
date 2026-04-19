@@ -24,6 +24,7 @@ plugins=(
   rust
   golang
   docker
+  mvn
 )
 
 # Source Oh My Zsh. This MUST come after the settings above.

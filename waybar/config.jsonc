@@ -233,10 +233,10 @@
 
     "clock": {
         "timezone": "America/New_York",
-        "format": " {:%I:%M %p}",
+        "format": "     {:%I:%M %p}",
         "tooltip": true,
         "on-click": "setbg",
-        "tooltip-format": " {:%A, %B %e %Y}"
+        "tooltip-format": "    {:%A, %B %e %Y}"
     },
 
     "custom/khorshididate": { 

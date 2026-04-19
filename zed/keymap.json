@@ -1,0 +1,333 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": ["workspace::SendKeystrokes", "escape : w enter"],
+    },
+  },
+  //
+  // ==== which-key fixj
+  //
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space": null,
+    },
+  },
+
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space space": "tab_switcher::OpenInActivePane",
+    },
+  },
+  // =========================================================
+  // TOGGLE / UI
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Toggle inlay hints — Zed calls them "inlay hints" in settings,
+      // no runtime toggle action yet; nearest is inline blame toggle
+      "space t h": "editor::ToggleInlayHints",
+
+      "space t d": "editor::ToggleInlineDiagnostics",
+      // Zen / distraction-free
+      "space z": "workspace::ToggleCenteredLayout",
+
+      // Duplicate line
+      "space d": "editor::DuplicateLineDown",
+    },
+  },
+
+  // =========================================================
+  // Task and debugger start MAPPINGS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space t r": "task::Spawn",
+      "space d b": "debugger::Start",
+    },
+  },
+  // =========================================================
+  // LSP MAPPINGS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+
+      // Rename
+      "space r n": "editor::Rename",
+
+      // Document symbols / file structure
+      "space d s": "outline::Toggle",
+      "g o": "outline::Toggle",
+
+      // Hover documentation
+      "space k": "editor::Hover",
+
+      // Goto type declaration — Zed doesn't have a separate "type declaration"
+      // action; GotoDefinition is the closest
+      "g t": "editor::GoToTypeDefinition",
+
+      // Go to declaration / definition
+      "g d": "editor::GoToDefinition",
+      "g D": "editor::GoToDeclaration",
+
+      // Go to implementation
+      "g i": "editor::GoToImplementation",
+
+      // References
+      "g r": "editor::FindAllReferences",
+
+      // Workspace symbols
+      "g s": "project_symbols::Toggle",
+    },
+  },
+  // =========================================================
+  // FORMATTING
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space f": "editor::Format",
+    },
+  },
+  {
+    "context": "VimVisual",
+    "bindings": {
+      "space f": "editor::Format",
+    },
+  },
+  // =========================================================
+  // DIAGNOSTICS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space q": "diagnostics::Deploy",
+
+      // Next / previous diagnostic
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
+    },
+  },
+  // =========================================================
+  // GIT MAPPINGS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Git status / panel
+      "space g s": "git_panel::ToggleFocus",
+
+      // Pull
+      "space g p": "git::Fetch",
+
+      // Stage / unstage (Zed git panel actions)
+      "space g a": "git::StageFile",
+      "space g u": "git::UnstageFile",
+
+      // Diff
+      "space g d": "editor::ToggleSelectedDiffHunks",
+      "space g h a": "git::StageAndNext",
+      "space g h u": "git::UnstageAndNext",
+
+      // Hunk navigation
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+    },
+  },
+  // =========================================================
+  // WINDOW SPLITS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space w v": "pane::SplitRight",
+      "space w h": "pane::SplitDown",
+
+      // Focus movement between splits
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+    },
+  },
+  // =========================================================
+  // BUFFER / TAB NAVIGATION
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "] b": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
+      "] B": "pane::ActivateNextItem",
+      "[ B": "pane::ActivatePreviousItem",
+
+      // Close tab
+      "space x": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-t": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Workspace || Editor",
+    "unbind": {
+      "alt-f12": "terminal_panel::Toggle",
+    },
+  },
+  // =========================================================
+  // DEBUGGING
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Toggle breakpoint
+      "space b": "editor::ToggleBreakpoint",
+      "space B": "editor::ToggleBreakpoint",
+
+      // Debug controls (F-keys preserved)
+      "f5": "debugger::Continue",
+      "f1": "debugger::StepInto",
+      "f2": "debugger::StepOver",
+      "f3": "debugger::StepOut",
+      // F7 (ShowExecutionPoint) has no direct Zed equivalent
+    },
+  },
+  // =========================================================
+  // LINE OPERATIONS
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Add blank line above/below (mirrors [<Space> / ]<Space>)
+      "[ space": "editor::AddSelectionAbove",
+      "] space": "editor::AddSelectionBelow",
+
+      // Move lines up/down
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "VimVisual",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+    },
+  },
+  // =========================================================
+  // MISC
+  // =========================================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Clear search highlight
+      "escape": "editor::Cancel",
+
+      // Open URL/file under cursor
+      "g x": "editor::OpenUrl",
+
+      // Comment line (gc is handled by vim mode natively via commentary plugin equivalent)
+      // Zed vim mode supports gcc / gc out of the box — no override needed
+
+      // AI assistant (if using Zed's built-in AI)
+      "space c c": "workspace::ToggleRightDock",
+    },
+  },
+
+  // =========================================================
+  // INSERT MODE
+  // =========================================================
+  {
+    "context": "VimInsert",
+    "bindings": {
+      // Trigger code completion
+      "ctrl-space": "editor::ShowCompletions",
+
+      // Dismiss completion
+      "ctrl-]": "editor::Cancel",
+
+      // Hover/signature help
+      "ctrl-s": "editor::ShowSignatureHelp",
+
+      // Quick documentation
+      "ctrl-q": "editor::Hover",
+
+      // Next/prev completion item (Zed handles this natively with ctrl-n/p in menus,
+      // but explicit bindings here for parity)
+      "ctrl-n": "editor::ContextMenuNext",
+      "ctrl-p": "editor::ContextMenuPrevious",
+
+      // Escape and save (ctrl-c variant)
+      "ctrl-c": ["workspace::SendKeystrokes", "escape :w enter"],
+
+      // Accept completion with Tab is handled by Zed natively
+      // Shift-Tab for prev template variable → snippet prev
+      "shift-tab": "editor::NextSnippetTabstop",
+    },
+  },
+
+  {
+    "context": "VimControl && !Menu",
+    "bindings": {
+      "space c p": "theme_selector::Toggle",
+    },
+  },
+  // =========================================================
+  // VISUAL MODE
+  // =========================================================
+  {
+    "context": "VimVisual",
+    "bindings": {
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+
+      // Refactor
+      "space c f": "editor::Rename",
+
+      // LSP code actions (gra parity)
+      "g r a": "editor::ToggleCodeActions",
+
+      // Search for selection
+      "space s g": "pane::DeploySearch",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "bindings": {
+      "alt--": "project_panel::Toggle",
+    },
+  },
+  {
+    "bindings": {
+      "alt--": "workspace::ToggleLeftDock",
+    },
+  },
+]
