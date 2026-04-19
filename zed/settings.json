@@ -45,7 +45,11 @@
   },
   "ui_font_weight": 500.0,
   "buffer_font_weight": 850.0,
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "which_key": {
     "enabled": true,
     "delay_ms": 300,
