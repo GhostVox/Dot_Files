@@ -1,0 +1,223 @@
+// Place your key bindings in this file to override the defaults
+[
+  // =========================================================
+{
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+},
+// INSERT MODE
+  // =========================================================
+   {
+    "key": "j j",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vscode-neovim.escape",
+        "workbench.action.files.save"
+      ]
+    },
+    "when": "neovim.mode == 'insert'"
+  },  {
+    "key": "ctrl+c",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "vscode-neovim.escape",
+        "workbench.action.files.save"
+      ]
+    },
+    "when": "neovim.mode == 'insert'"
+  }, 
+
+  {
+    "key": "ctrl+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "neovim.mode == 'insert' && editorTextFocus"
+  }, 
+
+  {
+    "key": "ctrl+]",
+    "command": "hideSuggestWidget",
+    "when": "neovim.mode == 'insert' && suggestWidgetVisible"
+  }, 
+
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.triggerParameterHints",
+    "when": "neovim.mode == 'insert' && editorTextFocus"
+  }, 
+
+  {
+    "key": "ctrl+q",
+    "command": "editor.action.showHover",
+    "when": "neovim.mode == 'insert' && editorTextFocus"
+  }, 
+
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "neovim.mode == 'insert' && suggestWidgetVisible"
+  }, 
+
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "neovim.mode == 'insert' && suggestWidgetVisible"
+  }, 
+
+  {
+    "key": "shift+tab",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "neovim.mode == 'insert' && inSnippetMode"
+  },
+  // =========================================================
+  // EXPLORER / SIDEBAR
+  // =========================================================
+    {
+    "key": "alt+-",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  // =========================================================
+  // WINDOW SPLITS / PANEL NAVIGATION
+  // =========================================================
+  {
+    "key": "ctrl+h",
+    "command": "workbench.view.explorer",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus || terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+  },
+
+  // BUFFER / TAB NAVIGATION
+  // =========================================================
+  {
+    "key": "] b",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "[ b",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g o",
+    "command": "workbench.action.gotoSymbol",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+    {
+    "key": "g t",
+    "command": "editor.action.goToTypeDefinition",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g shift+d",
+    "command": "editor.action.revealDeclaration",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g i",
+    "command": "editor.action.goToImplementation",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g r",
+    "command": "references-view.findReferences",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g s",
+    "command": "workbench.action.showAllSymbols",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "g x",
+    "command": "editor.action.openLink",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+   {
+    "key": "] d",
+    "command": "editor.action.marker.next",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "[ d",
+    "command": "editor.action.marker.prev",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "] h",
+    "command": "editor.action.dirtydiff.next",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "[ h",
+    "command": "editor.action.dirtydiff.previous",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  // =========================================================
+  // DEBUGGING
+  // =========================================================
+  
+  {
+    "key": "f5",
+    "command": "workbench.action.debug.continue"
+  },
+  {
+    "key": "f1",
+    "command": "workbench.action.debug.stepInto"
+  },
+  {
+    "key": "f2",
+    "command": "workbench.action.debug.stepOver"
+  },
+  {
+    "key": "f3",
+    "command": "workbench.action.debug.stepOut"
+  },
+  // =========================================================
+  // LINE OPERATIONS
+  // =========================================================
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+]

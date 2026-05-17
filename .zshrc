@@ -4,6 +4,7 @@
 alias zed='zeditor'
 export HYPRSHOT_DIR="$HOME/Pictures/Screenshots/"
 
+export CHROME_EXECUTABLE=/usr/bin/chromium
 
 
 # --------------------------------------------------------------------------- #
@@ -29,7 +30,6 @@ plugins=(
 
 # Source Oh My Zsh. This MUST come after the settings above.
 source $ZSH/oh-my-zsh.sh
-
 # --------------------------------------------------------------------------- #
 # PATH Exports & Environment Variables
 # --------------------------------------------------------------------------- #

@@ -1,0 +1,266 @@
+{
+  "window.autoDetectColorScheme": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "whichkey.bindings": [
+    {
+      "key": " ",
+      "name": "Open Recent",
+      "type": "command",
+      "command": "workbench.action.openRecent"
+      
+    },
+    {
+      "key": "e",
+      "name": "Toggle Explorer",
+      "type": "command",
+      "command": "workbench.view.explorer"
+    },
+    {
+      "key": "x",
+      "name": "Close Editor",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor"
+    },
+    {
+      "key": "f",
+      "name": "Format Document",
+      "type": "command",
+      "command": "editor.action.formatDocument"
+    },
+    {
+      "key": "d",
+      "name": "Duplicate Line",
+      "type": "command",
+      "command": "editor.action.copyLinesDownAction"
+    },
+    {
+      "key": "/",
+      "name": "Find in File",
+      "type": "command",
+      "command": "actions.find"
+    },
+    {
+      "key": "b",
+      "name": "Toggle Breakpoint",
+      "type": "command",
+      "command": "editor.debug.action.toggleBreakpoint"
+    },
+    {
+      "key": "q",
+      "name": "Problems Panel",
+      "type": "command",
+      "command": "workbench.actions.view.problems"
+    },
+    {
+      "key": "z",
+      "name": "Zen Mode",
+      "type": "command",
+      "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "k",
+      "name": "Hover Docs",
+      "type": "command",
+      "command": "editor.action.showHover"
+    },
+    {
+      "key": "c",
+      "name": "+Code/AI",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Quick Fix",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "c",
+          "name": "Copilot Chat",
+          "type": "command",
+          "command": "workbench.action.chat.open"
+        },
+        {
+          "key": "i",
+          "name": "Inline Chat",
+          "type": "command",
+          "command": "vscode.editorChat.start"
+        },
+        {
+          "key": "p",
+          "name": "Theme Picker",
+          "type": "command",
+          "command": "workbench.action.selectTheme"
+        }
+      ]
+    },
+    {
+      "key": "r",
+      "name": "+Rename",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "n",
+          "name": "Rename Symbol",
+          "type": "command",
+          "command": "editor.action.rename"
+        }
+      ]
+    },
+    {
+      "key": "g",
+      "name": "+Git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Source Control",
+          "type": "command",
+          "command": "workbench.view.scm"
+        },
+        {
+          "key": "p",
+          "name": "Fetch",
+          "type": "command",
+          "command": "git.fetch"
+        },
+        {
+          "key": "a",
+          "name": "Stage File",
+          "type": "command",
+          "command": "git.stage"
+        },
+        {
+          "key": "u",
+          "name": "Unstage File",
+          "type": "command",
+          "command": "git.unstage"
+        },
+        {
+          "key": "d",
+          "name": "Diff Hunk",
+          "type": "command",
+          "command": "editor.action.dirtydiff.next"
+        }
+      ]
+    },
+    {
+      "key": "s",
+      "name": "+Search",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Find File",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "g",
+          "name": "Find in Files",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        },
+        {
+          "key": "w",
+          "name": "Search Word",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        },
+        {
+          "key": "d",
+          "name": "Diagnostics",
+          "type": "command",
+          "command": "workbench.actions.view.problems"
+        },
+        {
+          "key": "k",
+          "name": "Keybindings",
+          "type": "command",
+          "command": "workbench.action.openGlobalKeybindings"
+        }
+      ]
+    },
+    {
+      "key": "d",
+      "name": "+Debug/Definitions",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Go to Symbol",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol"
+        },
+        {
+          "key": "b",
+          "name": "Start Debug",
+          "type": "command",
+          "command": "workbench.action.debug.start"
+        }
+      ]
+    },
+    {
+      "key": "t",
+      "name": "+Toggle",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "h",
+          "name": "Inlay Hints",
+          "type": "command",
+          "command": "editor.action.inlayHints.toggle"
+        },
+        {
+          "key": "d",
+          "name": "Inline Diagnostics",
+          "type": "command",
+          "command": "editor.action.showHover"
+        },
+        {
+          "key": "r",
+          "name": "Run Task",
+          "type": "command",
+          "command": "workbench.action.tasks.runTask"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "+Window",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "v",
+          "name": "Split Right",
+          "type": "command",
+          "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "h",
+          "name": "Split Down",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        }
+      ]
+    },
+    {
+      "key": "p",
+      "name": "+Project",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "v",
+          "name": "Explorer",
+          "type": "command",
+          "command": "workbench.view.explorer"
+        }
+      ]
+    }
+  ],
+  "git.autofetch": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Subliminal Dark"
+}

@@ -62,7 +62,7 @@
   },
 
   "title_bar": {
-    "show_branch_status_icon": true,
+    "show_branch_icon": false,
   },
   "terminal": {
     "toolbar": {
@@ -88,7 +88,7 @@
   "theme": {
     "mode": "dark",
     "light": "Subliminal Zed Light",
-    "dark": "Subliminal Dark",
+    "dark": "Subliminal Zed Dark",
   },
 
   "semantic_tokens": "combined",
