@@ -1,7 +1,7 @@
 * {
     font-family: "JetBrains Mono", monospace;
     font-weight: 500;
-    color: #cdd6f4; /* Catppuccin Mocha Text */
+    color: #c8c0d0; /* Subliminal foreground */
 }
 
 .blank-window {
@@ -12,16 +12,16 @@
 .notification-default-action,
 .control-center {
     border-radius: 12px;
-    border: 2px solid rgba(137, 180, 250, 0.3); /* Blue with transparency */
-    background: rgba(30, 30, 46, 0.9); /* Base with 0.9 transparency */
+    border: 2px solid rgba(120, 100, 150, 0.3); /* Muted violet */
+    background: rgba(22, 20, 28, 0.92); /* Deep dark base */
 }
 
 .notification {
-    box-shadow: 0 4px 8px rgba(17, 17, 27, 0.6); /* Crust shadow */
+    box-shadow: 0 4px 8px rgba(10, 8, 14, 0.7);
     border-radius: 12px;
     margin: 6px;
-    background: rgba(49, 50, 68, 0.9); /* Surface0 with transparency */
-    border: 1px solid rgba(116, 199, 236, 0.2); /* Sapphire border */
+    background: rgba(32, 28, 40, 0.92); /* Surface */
+    border: 1px solid rgba(100, 85, 130, 0.2); /* Dim violet border */
 }
 
 .notification-content {
@@ -30,121 +30,125 @@
 }
 
 .notification-default-action {
-    background: rgba(49, 50, 68, 0.9); /* Surface0 */
+    background: rgba(32, 28, 40, 0.92);
 }
 
 .notification-default-action:hover {
-    background: rgba(69, 71, 90, 0.9); /* Surface1 */
+    background: rgba(44, 40, 54, 0.92); /* Surface hover */
 }
 
 .control-center {
-    background: rgba(30, 30, 46, 0.9); /* Base */
-    border: 2px solid rgba(137, 180, 250, 0.3); /* Blue */
+    background: rgba(22, 20, 28, 0.92);
+    border: 2px solid rgba(120, 100, 150, 0.3);
     margin: 8px;
     padding: 12px;
 }
 
 .control-center .notification-row {
-    background: rgba(49, 50, 68, 0.8); /* Surface0 */
+    background: rgba(32, 28, 40, 0.85);
     border-radius: 8px;
     margin: 4px 0;
 }
 
 .control-center .notification-row:hover {
-    background: rgba(69, 71, 90, 0.8); /* Surface1 */
+    background: rgba(44, 40, 54, 0.85);
 }
 
 .widget-dnd {
     font-weight: bold;
     margin: 1em;
-    color: #f5c2e7; /* Pink */
+    color: #a896c0; /* Muted lavender */
 }
 
 .widget-dnd > switch {
-    border: 1px solid rgba(203, 166, 247, 0.4); /* Mauve */
+    border: 1px solid rgba(140, 120, 170, 0.4);
     border-radius: 12px;
-    background: rgba(49, 50, 68, 0.9); /* Surface0 */
+    background: rgba(32, 28, 40, 0.92);
     padding: 2px;
 }
 
 .widget-dnd > switch slider {
-    border: 1px solid rgba(203, 166, 247, 0.6); /* Mauve */
+    border: 1px solid rgba(140, 120, 170, 0.6);
     border-radius: 10px;
-    background: rgba(30, 30, 46, 0.9); /* Base */
+    background: rgba(22, 20, 28, 0.92);
     box-shadow: none;
 }
 
 .widget-dnd > switch:checked {
-    background: rgba(166, 227, 161, 0.3); /* Green */
+    background: rgba(100, 140, 110, 0.3); /* Muted sage green */
 }
 
 .widget-dnd > switch:checked slider {
-    background: #a6e3a1; /* Green */
+    background: #7a9e88; /* Desaturated sage */
 }
 
 .widget-mpris {
     border-radius: 12px;
-    background: rgba(49, 50, 68, 0.9); /* Surface0 */
-    border: 1px solid rgba(180, 190, 254, 0.3); /* Lavender */
+    background: rgba(32, 28, 40, 0.92);
+    border: 1px solid rgba(110, 95, 140, 0.3);
     margin: 1em;
     padding: 12px;
 }
 
 .widget-mpris-player {
-    background: rgba(69, 71, 90, 0.8); /* Surface1 */
+    background: rgba(44, 40, 54, 0.85);
     border-radius: 8px;
     padding: 8px;
 }
 
 .widget-buttons-grid {
     margin: 1em;
-    background: rgba(49, 50, 68, 0.9); /* Surface0 */
+    background: rgba(32, 28, 40, 0.92);
     border-radius: 12px;
     padding: 8px;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
     box-shadow: none;
-    color: #cdd6f4; /* Text */
+    color: #c8c0d0;
     font-weight: 500;
-    border: 1px solid rgba(137, 180, 250, 0.3); /* Blue */
-    background: rgba(69, 71, 90, 0.9); /* Surface1 */
+    border: 1px solid rgba(120, 100, 150, 0.3);
+    background: rgba(44, 40, 54, 0.92);
     border-radius: 8px;
     margin: 4px;
     padding: 8px;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    background: rgba(88, 91, 112, 0.9); /* Surface2 */
-    border-color: rgba(137, 180, 250, 0.5); /* Blue */
+    background: rgba(58, 52, 70, 0.92);
+    border-color: rgba(140, 120, 170, 0.5);
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:active {
-    background: rgba(137, 180, 250, 0.2); /* Blue */
+    background: rgba(120, 100, 150, 0.2);
 }
 
 .notification-group {
-    background: rgba(49, 50, 68, 0.9); /* Surface0 */
+    background: rgba(32, 28, 40, 0.92);
     border-radius: 12px;
     margin: 4px;
-    border: 1px solid rgba(116, 199, 236, 0.2); /* Sapphire */
+    border: 1px solid rgba(100, 85, 130, 0.2);
 }
 
 .notification-group-headers {
-    background: rgba(69, 71, 90, 0.9); /* Surface1 */
-    color: #89b4fa; /* Blue */
+    background: rgba(44, 40, 54, 0.92);
+    color: #a896c0; /* Muted lavender accent */
     font-weight: bold;
 }
 
 .close-button {
-    background: rgba(243, 139, 168, 0.8); /* Red */
-    color: #1e1e2e; /* Base */
-    border-radius: 50%;
-    border: none;
+    background: transparent;
+    color: #a896c0;
+    border-radius: 6px;
+    border: 1px solid rgba(120, 100, 150, 0.3);
+    min-width: 20px;
+    min-height: 20px;
 }
 
 .close-button:hover {
-    background: #f38ba8; /* Red solid */
+    background: rgba(180, 100, 110, 0.2);
+    color: #b46470;
+    border-color: rgba(180, 100, 110, 0.4);
 }
 
 .notification-row {
@@ -152,5 +156,5 @@
 }
 
 .notification-row:hover {
-    background: rgba(69, 71, 90, 0.8); /* Surface1 */
+    background: rgba(44, 40, 54, 0.85);
 }

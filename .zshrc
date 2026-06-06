@@ -106,3 +106,4 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 
 
+export PATH="$HOME/flutter/bin:$PATH"
