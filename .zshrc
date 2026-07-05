@@ -107,3 +107,6 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 
 export PATH="$HOME/flutter/bin:$PATH"
+
+# opencode
+export PATH=/home/ghostvox/.opencode/bin:$PATH

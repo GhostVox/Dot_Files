@@ -1,0 +1,51 @@
+# ============================================================
+#  Subliminal Dark — Ghostty theme
+#  Ported from the Zed "Subliminal Dark" variant by GhostVox
+#  Source palette: https://github.com/GhostVox/subliminal-theme
+#
+#  Usage:
+#    Save as:  ~/.config/ghostty/themes/Subliminal Dark
+#    Then in  ~/.config/ghostty/config  add:
+#      theme = Subliminal Dark
+#
+#  (Theme files hold colors only. Opacity/blur go in your main
+#   config — see the commented block at the bottom.)
+# ============================================================
+
+# ---- Base ----
+background            = #0D1117
+foreground            = #abb2bf
+
+# ---- Cursor ----
+cursor-color          = #F5906A
+cursor-text           = #0D1117
+
+# ---- Selection ----
+selection-background  = #8FBDC9
+selection-foreground  = #0D1117
+
+# ---- 16 ANSI colors (from terminal.ansi.*) ----
+# black
+palette = 0=#282c34
+palette = 8=#636d83
+# red
+palette = 1=#e06c75
+palette = 9=#EA858B
+# green
+palette = 2=#98c379
+palette = 10=#AAD581
+# yellow
+palette = 3=#e5c07b
+palette = 11=#FFD885
+# blue
+palette = 4=#61afef
+palette = 12=#85C1FF
+# magenta
+palette = 5=#c678dd
+palette = 13=#D398EB
+# cyan
+palette = 6=#56b6c2
+palette = 14=#6ED5DE
+# white
+palette = 7=#abb2bf
+palette = 15=#fafafa 

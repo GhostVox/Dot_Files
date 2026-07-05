@@ -4,6 +4,12 @@
 # path since Ghostty couldn't find any existing config files on your system:
 #
 #   /home/ghostvox/.config/ghostty/config
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/ghostvox/.config/ghostty/config
 #
 # The template does not set any default options, since Ghostty ships
 # with sensible defaults for all options. Users should only need to set
@@ -47,7 +53,12 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
 window-padding-y = 0
 custom-shader = "shaders/cursor_warp.glsl"
-theme = Gruvbox Dark Hard
+theme = noctalia
 copy-on-select = clipboard
+background-opacity = 0.85
+background-blur-radius= 20
+unfocused-split-opacity = 0.6
+window-decoration = none
