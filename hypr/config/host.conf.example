@@ -1,0 +1,47 @@
+################################################################
+### PER-HOST HARDWARE CONFIG — template                      ###
+################################################################
+#
+# Copy to host.conf on each machine and edit. host.conf is gitignored,
+# so every machine keeps its own hardware settings while the rest of
+# the repo stays identical everywhere.
+#
+#     cp ~/.config/hypr/config/host.conf.example \
+#        ~/.config/hypr/config/host.conf
+#
+# Sourced LAST from hyprland.conf, so anything here overrides the
+# shared config — including monitor rules in monitors.conf.
+#
+# Find your values with:  hyprctl monitors all
+#
+################################################################
+
+
+###############
+### MONITORS ##
+###############
+
+# monitor = eDP-1, 2560x1600@165, 0x0, 1.6
+
+# Catch-all so an unlisted display still comes up rather than staying dark.
+# Keep this LAST.
+monitor = , preferred, auto, auto
+
+
+#################
+### GPU / ENV ###
+#################
+# These are hardware-specific and MUST match the actual GPU.
+# Wrong values here break video decode or rendering outright.
+
+# ── AMD ────────────────────────────────────────────────────────
+# env = LIBVA_DRIVER_NAME,radeonsi
+
+# ── Intel ──────────────────────────────────────────────────────
+# env = LIBVA_DRIVER_NAME,iHD
+
+# ── NVIDIA ─────────────────────────────────────────────────────
+# env = LIBVA_DRIVER_NAME,nvidia
+# env = GBM_BACKEND,nvidia-drm
+# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+# env = WLR_NO_HARDWARE_CURSORS,1     # NVIDIA-only workaround; omit elsewhere

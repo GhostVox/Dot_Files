@@ -1,1 +1,9 @@
 hypr/current_wallpaper
+hypr/host.conf
+hypr/config/host.conf
+
+# Noctalia-generated theme files — rewritten at runtime on every palette change
+ghostty/themes/noctalia
+kitty/themes/noctalia.conf
+zed/themes/noctalia.json
+lazygit/themes/
