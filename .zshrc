@@ -1,7 +1,6 @@
 # --------------------------------------------------------------------------- #
 # Enviroment Variables
 # -------------------------------------------------------------------------- #
-alias zed='zeditor'
 export HYPRSHOT_DIR="$HOME/Pictures/Screenshots/"
 
 export CHROME_EXECUTABLE=/usr/bin/chromium

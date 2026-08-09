@@ -1,4 +1,3 @@
-
 -- general {
 --     disable_loading_bar = true
 --     grace = 300
@@ -70,15 +69,13 @@ local font = "JetBrainsMono Nerd Font"
 
 -- TODO: manual review — unknown section 'input-field {' on line 109
 hl.config({
-    general = {
-        disable_loading_bar = true,
-        hide_cursor = true,
-    },
-    -- BACKGROUND
-    -- TIME
-    -- DATE 
-    -- USER AVATAR
-    -- INPUT FIELD
+	general = {
+		disable_loading_bar = true,
+		hide_cursor = true,
+	},
+	-- BACKGROUND
+	-- TIME
+	-- DATE
+	-- USER AVATAR
+	-- INPUT FIELD
 })
-
-
